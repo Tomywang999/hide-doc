@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Check</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        #message {
+            margin-top: 10px;
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>耳朵长，嘴巴短，吃饭从来不张嘴</h1>
+        <input type="text" id="userInput" placeholder="...">
+        <button onclick="checkInput()">提交</button>
+        <div id="message"></div>
+    </div>
+
+    <script>
+        function checkInput() {
+            const correctCode = "筷子"; // Change this to the content you want to check
+            const userInput = document.getElementById("userInput").value;
+            const messageElement = document.getElementById("message");
+    
+            if (userInput === correctCode) {
+                messageElement.textContent = "对了，下一个地点是[小卖部，the price you pay for hunger]";
+                messageElement.style.color = "green";
+            } else {
+                messageElement.textContent = "不太对，再想想";
+                messageElement.style.color = "red";
+            }
+        }
+    </script>
+    
+</body>
+</html>
